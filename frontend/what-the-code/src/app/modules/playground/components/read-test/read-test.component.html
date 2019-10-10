@@ -1,0 +1,8 @@
+<h3>Test Things</h3>
+
+<ul>
+  <li *ngFor="let testThing of testThings | async">
+    {{testThing.name}}
+    <button (click)="removeTestThing(testThing)"> remove</button>
+  </li>
+</ul>
