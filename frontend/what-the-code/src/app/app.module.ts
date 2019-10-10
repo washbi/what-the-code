@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PlaygroundComponent } from './modules/playground/playground.component';
 import {PlaygroundModule} from "./modules/playground/playground.module";
+import {PouchdbModule} from "./modules/pouchdb/pouchdb.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +12,8 @@ import {PlaygroundModule} from "./modules/playground/playground.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PlaygroundModule
+    PlaygroundModule,
+    PouchdbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
