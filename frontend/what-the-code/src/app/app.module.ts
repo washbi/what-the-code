@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {PlaygroundModule} from "./modules/playground/playground.module";
 import {PouchdbModule} from "./modules/pouchdb/pouchdb.module";
+import {CsshalfgodstuffModule} from "./modules/csshalfgodstuff/csshalfgodstuff.module";
+import {NgbasicstuffModule} from "./modules/ngbasicstuff/ngbasicstuff.module";
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import {PouchdbModule} from "./modules/pouchdb/pouchdb.module";
     BrowserModule,
     AppRoutingModule,
     PlaygroundModule,
-    PouchdbModule
+    PouchdbModule,
+    CsshalfgodstuffModule,
+    NgbasicstuffModule
   ],
   providers: [],
   bootstrap: [AppComponent]

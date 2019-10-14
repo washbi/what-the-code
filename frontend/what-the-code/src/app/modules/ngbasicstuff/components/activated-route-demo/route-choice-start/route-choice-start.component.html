@@ -1,0 +1,22 @@
+<h3>route-choice-start</h3>
+
+<input type="TEXT" placeholder="type in your name" #username (change)="onChangeUsername(username.value)">
+
+<p><b>CHOOSE WISELY</b></p>
+
+<div class="theme-box">
+  <div *ngFor="let item of choiceOneList">
+    <div (click)="navigateToChoice(choiceOne, item.id)">
+      {{item.name}}
+    </div>
+  </div>
+</div>
+
+<div class="theme-box">
+  <div *ngFor="let item of choiceTwoList">
+    <div (click)="navigateToChoice(choiceTwo, item.houseName)">
+      {{item.houseName}}
+    </div>
+  </div>
+</div>
+

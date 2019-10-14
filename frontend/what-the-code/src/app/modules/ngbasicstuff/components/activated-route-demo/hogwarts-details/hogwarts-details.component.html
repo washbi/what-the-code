@@ -1,0 +1,26 @@
+<p>hogwarts-details works!</p>
+
+<p *ngIf="username">{{username}}, you have chosen {{hogwartsHouse.houseName}}</p>
+
+<table>
+  <tr>
+    <td></td>
+    <td><img class="image-box" src="{{hogwartsHouse.imageUrl}}" alt="image"></td>
+  </tr>
+  <tr>
+    <td>founder: </td>
+    <td>{{hogwartsHouse.founder}}</td>
+  </tr>
+  <tr>
+    <td>animal: </td>
+    <td>{{hogwartsHouse.animal}}</td>
+  </tr>
+  <tr>
+    <td>trait: </td>
+    <td>{{hogwartsHouse.trait}}</td>
+  </tr>
+  <tr>
+    <td>head teacher: </td>
+    <td>{{hogwartsHouse.headTeacher}}</td>
+  </tr>
+</table>
