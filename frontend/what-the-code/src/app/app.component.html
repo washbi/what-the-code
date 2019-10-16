@@ -1,3 +1,4 @@
+<script src="app.component.ts"></script>
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -311,10 +312,11 @@
   </div>
 
   <!-- Terminal -->
-  <div class="terminal">
-      <pre>ng generate component xyz</pre>
-  </div>
-
+  <ng-container *ngFor="let module of wtcModules">
+    <div class="terminal" (click)="navigateToModule(module.url)">
+      <pre>ng generate component {{module.name}}</pre>
+    </div>
+  </ng-container>
 </div>
 
 <router-outlet></router-outlet>
