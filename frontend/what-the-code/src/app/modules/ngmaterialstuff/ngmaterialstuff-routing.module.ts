@@ -1,9 +1,15 @@
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
 import {NgmaterialstuffComponent} from "./ngmaterialstuff.component";
+import {DragNDropListComponent} from "./components/drag-n-drop-list/drag-n-drop-list.component";
 
 const routes: Routes = [
-  {path: 'ngmaterialstuff', component: NgmaterialstuffComponent}
+  { path: 'ngmaterialstuff',
+    component: NgmaterialstuffComponent,
+    children: [
+      { path: 'drag-n-drop-list', component: DragNDropListComponent}
+    ]
+  }
 ];
 
 @NgModule({
