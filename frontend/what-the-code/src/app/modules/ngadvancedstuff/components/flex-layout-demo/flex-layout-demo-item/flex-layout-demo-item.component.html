@@ -1,0 +1,24 @@
+<!-- no canvas and position on mobile-->
+<div cdkDrag
+     cdkDragBoundary="#drag-n-drop-boundary-container"
+     (cdkDragReleased)="handleDragReleaseEvent($event)"
+     fxFlex="10%"
+     fxFlex.xs="100%"
+     [ngStyle]="{ position: 'absolute', top: itemTop, left: itemLeft}"
+     [ngStyle.xs]="{}"
+     class="movable-item"
+     (click)="onClickItem()"
+>
+  <div>
+    <span>{{item.name}}</span>
+    <!-- dont show drag and drop icon on mobile-->
+    <div fxShow="true"
+         fxShow.xs="false"
+         class="movable-item-handle"
+         cdkDragHandle>
+      <fa-icon [icon]="faArrowsAlt" [size]="'3x'"></fa-icon>
+    </div>
+  </div>
+
+  <img src="../assets/icons/{{item.icon}}" alt="{{item.name}} icon" />
+</div>

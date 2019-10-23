@@ -6,6 +6,7 @@ import { ActivatedRouteDemoComponent } from './components/activated-route-demo/a
 import { RouteChoiceStartComponent } from './components/activated-route-demo/route-choice-start/route-choice-start.component';
 import { PokemonDetailsComponent } from './components/activated-route-demo/pokemon-details/pokemon-details.component';
 import { HogwartsDetailsComponent } from './components/activated-route-demo/hogwarts-details/hogwarts-details.component';
+import {SharedModule} from "../../shared-modules/shared.module";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HogwartsDetailsComponent } from './components/activated-route-demo/hogw
   ],
   imports: [
     BrowserModule,
-    NgbasicstuffRoutingModule
+    NgbasicstuffRoutingModule,
+    SharedModule
   ],
   exports: [
   ]
