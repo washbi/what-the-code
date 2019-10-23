@@ -18,6 +18,7 @@ export class AppComponent {
     {name: 'css halfgod stuff', url: 'csshalfgodstuff'},
     {name: 'pouchdb', url: 'pouchdb'},
     {name: 'playground', url: 'playground'},
+    {name: 'angular material stuff', url: 'ngmaterialstuff'},
   ];
 
   public navigateToModule(url: string) {

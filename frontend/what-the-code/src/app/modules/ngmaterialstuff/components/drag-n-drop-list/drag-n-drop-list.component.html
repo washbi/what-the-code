@@ -1,0 +1,23 @@
+<h1>Drag and Drop List with Ng Material Demo</h1>
+
+<div cdkDropListGroup>
+  <div class="container" *ngFor="let entry of (itemsMap | keyvalue)">
+    <h2 class="type-name">{{ getTypeName(entry.key) }}</h2>
+    <div
+      class="items-list"
+      cdkDropList
+      [cdkDropListData]="entry.value"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div
+        class="item-box"
+        *ngFor="let item of entry.value"
+        cdkDrag
+        [cdkDragData]="item"
+      >
+        <h3 class="item-name">{{ item.name }}</h3>
+        <p class="item-description">{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

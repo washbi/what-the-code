@@ -6,6 +6,8 @@ import {PlaygroundModule} from "./modules/playground/playground.module";
 import {PouchdbModule} from "./modules/pouchdb/pouchdb.module";
 import {CsshalfgodstuffModule} from "./modules/csshalfgodstuff/csshalfgodstuff.module";
 import {NgbasicstuffModule} from "./modules/ngbasicstuff/ngbasicstuff.module";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {NgmaterialstuffModule} from "./modules/ngmaterialstuff/ngmaterialstuff.module";
 
 @NgModule({
   declarations: [
@@ -14,10 +16,12 @@ import {NgbasicstuffModule} from "./modules/ngbasicstuff/ngbasicstuff.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     PlaygroundModule,
     PouchdbModule,
     CsshalfgodstuffModule,
-    NgbasicstuffModule
+    NgbasicstuffModule,
+    NgmaterialstuffModule
   ],
   providers: [],
   bootstrap: [AppComponent]
