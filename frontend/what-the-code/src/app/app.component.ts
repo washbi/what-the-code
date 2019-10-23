@@ -19,6 +19,7 @@ export class AppComponent {
     {name: 'pouchdb', url: 'pouchdb'},
     {name: 'playground', url: 'playground'},
     {name: 'angular material stuff', url: 'ngmaterialstuff'},
+    {name: 'angular advanced stuff', url: 'ngadvancedstuff'},
   ];
 
   public navigateToModule(url: string) {
