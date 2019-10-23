@@ -7,6 +7,7 @@ import {MaterialModule} from "./material.module";
 import {FontSwitcherComponent} from "./components/font-switcher/font-switcher.component";
 import {RemoveQuotationMarks} from "./components/font-switcher/pipes/remove-quotation-marks";
 import {TransformToSelector} from "./components/font-switcher/pipes/transform-to-selector";
+import {SharedModule} from "../../shared-modules/shared.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {TransformToSelector} from "./components/font-switcher/pipes/transform-to
   imports: [
     BrowserModule,
     NgmaterialstuffRoutingModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ],
   exports: [
   ]

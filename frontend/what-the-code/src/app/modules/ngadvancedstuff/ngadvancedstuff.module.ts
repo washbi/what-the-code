@@ -7,6 +7,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { FlexLayoutDemoItemComponent } from './components/flex-layout-demo/flex-layout-demo-item/flex-layout-demo-item.component';
+import {SharedModule} from "../../shared-modules/shared.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FlexLayoutDemoItemComponent } from './components/flex-layout-demo/flex-
     NgadvancedstuffRoutingModule,
     DragDropModule,
     FlexLayoutModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    SharedModule
   ],
   exports: [
   ]

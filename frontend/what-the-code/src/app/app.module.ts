@@ -9,6 +9,7 @@ import {NgbasicstuffModule} from "./modules/ngbasicstuff/ngbasicstuff.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgmaterialstuffModule} from "./modules/ngmaterialstuff/ngmaterialstuff.module";
 import {NgadvancedstuffModule} from "./modules/ngadvancedstuff/ngadvancedstuff.module";
+import {SharedModule} from "./shared-modules/shared.module";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,8 @@ import {NgadvancedstuffModule} from "./modules/ngadvancedstuff/ngadvancedstuff.m
     NgadvancedstuffModule
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
