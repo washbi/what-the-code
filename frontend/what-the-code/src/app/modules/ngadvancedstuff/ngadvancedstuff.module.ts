@@ -3,15 +3,23 @@ import {BrowserModule} from "@angular/platform-browser";
 import {NgadvancedstuffComponent} from "./ngadvancedstuff.component";
 import {NgadvancedstuffRoutingModule} from "./ngadvancedstuff-routing.module";
 import { FlexLayoutDemoComponent } from './components/flex-layout-demo/flex-layout-demo.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { FlexLayoutDemoItemComponent } from './components/flex-layout-demo/flex-layout-demo-item/flex-layout-demo-item.component';
 
 @NgModule({
   declarations: [
     NgadvancedstuffComponent,
-    FlexLayoutDemoComponent
+    FlexLayoutDemoComponent,
+    FlexLayoutDemoItemComponent,
   ],
   imports: [
     BrowserModule,
-    NgadvancedstuffRoutingModule
+    NgadvancedstuffRoutingModule,
+    DragDropModule,
+    FlexLayoutModule,
+    FontAwesomeModule
   ],
   exports: [
   ]
