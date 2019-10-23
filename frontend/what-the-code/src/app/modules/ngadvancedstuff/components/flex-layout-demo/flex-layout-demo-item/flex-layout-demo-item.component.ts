@@ -32,7 +32,7 @@ export class FlexLayoutDemoItemComponent implements OnInit {
     this.setBoxPositions();
   }
 
-  public onClickItem() {
+  public onClickIcon() {
     this.router.navigate([this.item.url]);
   }
 

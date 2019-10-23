@@ -7,7 +7,6 @@
      [ngStyle]="{ position: 'absolute', top: itemTop, left: itemLeft}"
      [ngStyle.xs]="{}"
      class="movable-item"
-     (click)="onClickItem()"
 >
   <div>
     <span>{{item.name}}</span>
@@ -20,5 +19,5 @@
     </div>
   </div>
 
-  <img src="../assets/icons/{{item.icon}}" alt="{{item.name}} icon" />
+  <img src="../assets/icons/{{item.icon}}" alt="{{item.name}} icon" (click)="onClickIcon()"/>
 </div>
