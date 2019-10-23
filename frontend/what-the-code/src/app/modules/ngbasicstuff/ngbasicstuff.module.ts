@@ -1,7 +1,6 @@
 import {NgModule} from "@angular/core";
 import {NgbasicstuffComponent} from "./ngbasicstuff.component";
 import {NgbasicstuffRoutingModule} from "./ngbasicstuff-routing.module";
-import {BrowserModule} from "@angular/platform-browser";
 import { ActivatedRouteDemoComponent } from './components/activated-route-demo/activated-route-demo.component';
 import { RouteChoiceStartComponent } from './components/activated-route-demo/route-choice-start/route-choice-start.component';
 import { PokemonDetailsComponent } from './components/activated-route-demo/pokemon-details/pokemon-details.component';
@@ -17,9 +16,8 @@ import {SharedModule} from "../../shared-modules/shared.module";
     HogwartsDetailsComponent,
   ],
   imports: [
-    BrowserModule,
-    NgbasicstuffRoutingModule,
-    SharedModule
+    SharedModule,
+    NgbasicstuffRoutingModule
   ],
   exports: [
   ]

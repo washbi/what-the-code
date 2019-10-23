@@ -11,7 +11,6 @@ import {
   MatSidenavModule,
   MatFormFieldModule
 } from '@angular/material';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   imports: [
@@ -24,8 +23,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatGridListModule,
     MatSelectModule,
     MatSidenavModule,
-    MatFormFieldModule,
-    DragDropModule
+    MatFormFieldModule
   ],
   exports: [
     MatIconModule,
@@ -37,8 +35,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatGridListModule,
     MatSelectModule,
     MatSidenavModule,
-    MatFormFieldModule,
-    DragDropModule
+    MatFormFieldModule
   ]
 })
 export class MaterialModule {}

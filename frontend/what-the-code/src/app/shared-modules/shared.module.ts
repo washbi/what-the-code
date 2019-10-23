@@ -1,18 +1,22 @@
 import {NgModule} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
 import {WtcTerminalBoxComponent} from "./wtc-terminal-box/wtc-terminal-box.component";
-import {AppRoutingModule} from "../app-routing.module";
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
+  imports: [
+    CommonModule
+  ],
   declarations: [
     WtcTerminalBoxComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
   exports: [
-    WtcTerminalBoxComponent
+    CommonModule,
+    FormsModule,
+    FontAwesomeModule,
+
+    WtcTerminalBoxComponent,
   ]
 })
 export class SharedModule { }

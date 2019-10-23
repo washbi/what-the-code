@@ -9,14 +9,13 @@ import {NgbasicstuffModule} from "./modules/ngbasicstuff/ngbasicstuff.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgmaterialstuffModule} from "./modules/ngmaterialstuff/ngmaterialstuff.module";
 import {NgadvancedstuffModule} from "./modules/ngadvancedstuff/ngadvancedstuff.module";
-import {SharedModule} from "./shared-modules/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, // provides services that are essential to launch and run a browser app
     AppRoutingModule,
     BrowserAnimationsModule,
     PlaygroundModule,
