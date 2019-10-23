@@ -1,0 +1,7 @@
+.movable-item img {
+  width: 100%;
+}
+
+.movable-item-handle {
+  cursor: move;
+}
