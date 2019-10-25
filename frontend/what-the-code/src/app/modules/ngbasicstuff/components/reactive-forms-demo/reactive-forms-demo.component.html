@@ -51,14 +51,14 @@
     enter cool fantasy/nick names <button (click)="addToDynamicFieldsArray()">+</button>
     <div *ngFor="let item of dynamicFieldsArray.controls; let i=index">
       name:
-      <input type="text" formControlName="i"> <button (click)="removeFromDynamicFieldsArray(i)">-</button>
+      <input type="text" formControlName="{{i}}"> <button (click)="removeFromDynamicFieldsArray(i)">-</button>
     </div>
   </div>
 
   <div formArrayName="dynamicGroup">
     enter your children <button (click)="addToDynamicGroupArray()">+</button>
     <div *ngFor="let item of dynamicGroupArray.controls; let i=index">
-      <div formGroupName="i" class="group">
+      <div formGroupName="{{i}}" class="group">
         <div>
           name:
           <input type="text" formControlName="name">
@@ -75,6 +75,13 @@
     </div>
   </div>
 
+  <h5>async validation</h5>
+  <div>
+    name a starter pokemon:
+    <input type="text" formControlName="asyncInput">
+  </div>
+
+
   <div>
     <button (click)="onTest()">Test</button>
   </div>
@@ -89,4 +96,5 @@
 <p>formGroup.get('wtcSerialnumber').errors: {{formGroup?.get('wtcSerialnumber').errors |json}}</p>
 <p>formGroup.get('mailOnly').errors: {{formGroup?.get('mailOnly').errors | json}}</p>
 <p>formGroup.get('numbersGroup').errors: {{formGroup?.get('numbersGroup').get('twoDigitsTwoDecimalsOnly').errors | json}}</p>
+<p>formGroup.get('asyncInput').errors: {{formGroup?.get('asyncInput').errors | json}}</p>
 

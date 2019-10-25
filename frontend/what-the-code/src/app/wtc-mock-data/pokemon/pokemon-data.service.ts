@@ -1,5 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Pokemon} from "./pokemon";
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,17 @@ export class PokemonDataService {
     return this.starterPokemon;
   }
 
+  /*
+   * fake async call
+   */
+  public findStarterPokemon(name: string): Observable<Pokemon> {
+    const pkmn = this.starterPokemon.find(pkmn => pkmn.name === name);
+
+    console.log('findStarterPokemon called');
+    return of(pkmn);
+  }
+
   public getPokemon(id: number): Pokemon {
-    return this.starterPokemon.find(pkmn => pkmn.id == id);
+    return this.starterPokemon.find(pkmn => pkmn.id === id);
   }
 }
