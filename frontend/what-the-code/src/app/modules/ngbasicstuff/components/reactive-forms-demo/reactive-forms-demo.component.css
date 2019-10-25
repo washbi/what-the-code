@@ -1,0 +1,32 @@
+div {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+button {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input {
+  font-weight: bold;
+}
+/*
+ ng-valid does not affect with cross field validation
+ */
+.ng-valid input {
+  color: green;
+}
+
+.ng-invalid:not(form):not(.group) {
+  color: red;
+  border-bottom: 2px solid red;
+}
+
+.cross-field-validation-error {
+  color: red;
+}

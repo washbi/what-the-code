@@ -1,0 +1,92 @@
+<h1>reactive-forms-demo</h1>
+
+<h4>single form control </h4>
+<div>
+  Text:
+  <input type="text" [formControl]="textInputControl"> {{textInputControl.value}}
+</div>
+
+<h4>form group control</h4>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div>
+    required input:
+    <input type="text" formControlName="requiredInput" required>
+  </div>
+  <div>
+    what-the-code custom serial number:
+    <input type="text" formControlName="wtcSerialnumber">
+  </div>
+  <div>
+    mail:
+    <input type="email" formControlName="mailOnly">
+  </div>
+  <div>
+    input field 1:
+    <input type="text" formControlName="matchFieldOne">
+  </div>
+  <div>
+    input has to match field 1:
+    <input type="text" formControlName="matchFieldTwo">
+  </div>
+  <div *ngIf="formGroup.errors?.matchTwoFieldsValidatorError && (formGroup.touched || formGroup.dirty)" class="cross-field-validation-error">
+    does not match field 1!
+  </div>
+  <div formGroupName="numbersGroup" class="group">
+    <div>
+      integer number:
+      <input type="text" formControlName="integerOnly">
+    </div>
+    <div>
+      one digit and one decimal number:
+      <input type="text" formControlName="oneDigitOneDecimalOnly">
+    </div>
+    <div>
+      two digits and two decimals number:
+      <input type="text" formControlName="twoDigitsTwoDecimalsOnly">
+    </div>
+  </div>
+
+  <h5>form arrays</h5>
+  <div formArrayName="dynamicFields">
+    enter cool fantasy/nick names <button (click)="addToDynamicFieldsArray()">+</button>
+    <div *ngFor="let item of dynamicFieldsArray.controls; let i=index">
+      name:
+      <input type="text" formControlName="i"> <button (click)="removeFromDynamicFieldsArray(i)">-</button>
+    </div>
+  </div>
+
+  <div formArrayName="dynamicGroup">
+    enter your children <button (click)="addToDynamicGroupArray()">+</button>
+    <div *ngFor="let item of dynamicGroupArray.controls; let i=index">
+      <div formGroupName="i" class="group">
+        <div>
+          name:
+          <input type="text" formControlName="name">
+        </div>
+        <div>
+          age:
+          <input type="number" formControlName="age">
+        </div>
+        <div>
+          occupation:
+          <input type="text" formControlName="occupation">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <button (click)="onTest()">Test</button>
+  </div>
+  <div>
+    <button type="submit" [disabled]="!formGroup.valid">Submit</button>
+  </div>
+</form>
+
+<!-- can be VALID, INVALID, PENDING (while asynchronous validation), DISABLED -->
+<p>formGroup.status: {{formGroup?.status}}</p>
+<p>formGroup.get('requiredInput').errors: {{formGroup?.get('requiredInput').errors |json}}</p>
+<p>formGroup.get('wtcSerialnumber').errors: {{formGroup?.get('wtcSerialnumber').errors |json}}</p>
+<p>formGroup.get('mailOnly').errors: {{formGroup?.get('mailOnly').errors | json}}</p>
+<p>formGroup.get('numbersGroup').errors: {{formGroup?.get('numbersGroup').get('twoDigitsTwoDecimalsOnly').errors | json}}</p>
+

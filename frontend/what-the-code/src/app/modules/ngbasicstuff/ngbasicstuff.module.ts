@@ -6,6 +6,8 @@ import { RouteChoiceStartComponent } from './components/activated-route-demo/rou
 import { PokemonDetailsComponent } from './components/activated-route-demo/pokemon-details/pokemon-details.component';
 import { HogwartsDetailsComponent } from './components/activated-route-demo/hogwarts-details/hogwarts-details.component';
 import {SharedModule} from "../../shared-modules/shared.module";
+import { ReactiveFormsDemoComponent } from './components/reactive-forms-demo/reactive-forms-demo.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -14,10 +16,12 @@ import {SharedModule} from "../../shared-modules/shared.module";
     RouteChoiceStartComponent,
     PokemonDetailsComponent,
     HogwartsDetailsComponent,
+    ReactiveFormsDemoComponent,
   ],
   imports: [
     SharedModule,
-    NgbasicstuffRoutingModule
+    NgbasicstuffRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
   ]

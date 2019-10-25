@@ -5,6 +5,7 @@ import {ActivatedRouteDemoComponent} from "./components/activated-route-demo/act
 import {RouteChoiceStartComponent} from "./components/activated-route-demo/route-choice-start/route-choice-start.component";
 import {PokemonDetailsComponent} from "./components/activated-route-demo/pokemon-details/pokemon-details.component";
 import {HogwartsDetailsComponent} from "./components/activated-route-demo/hogwarts-details/hogwarts-details.component";
+import {ReactiveFormsDemoComponent} from "./components/reactive-forms-demo/reactive-forms-demo.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
           { path: 'route-choice-two/:hogwartsHouseName', component: HogwartsDetailsComponent}
         ]
       },
+      { path: 'template-driven-forms-demo', component: TemplateDrivenFormsDemoComponent }
     ]
   }
 ];
