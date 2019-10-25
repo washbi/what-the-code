@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {forbiddenNameValidator} from "../../validators/wtc-serialnumber-validator.directive";
 import {matchTwoFieldsValidator} from "../../validators/wtc-match-two-fields-validator.directive";
-import {TestAsyncValidator} from "../../validators/test-async-validator.directive";
+import {StarterPokemonValidatorDirective} from "../../validators/starter-pokemon-validator.directive";
+import {customValidator} from "../../validators/custom-sync-validator.directive";
 
 @Component({
   selector: 'app-reactive-forms-demo',
@@ -27,34 +27,35 @@ export class ReactiveFormsDemoComponent implements OnInit {
   // form builder: factory to generate instead of creating forms manually
   formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private testAsyncValidator: TestAsyncValidator) {
+  constructor(private formBuilder: FormBuilder, private starterPokemonValidator: StarterPokemonValidatorDirective) {
     this.formGroup = this.formBuilder.group({
 
-      requiredInput: ['', Validators.required],
-      wtcSerialnumber: ['', forbiddenNameValidator(/bob/i)],
-      mailOnly: ['', [Validators.minLength(4), Validators.email]],
-
-      matchFieldOne: [], // cross field validation
-      matchFieldTwo: [], // cross field validation
-
-      numbersGroup: this.formBuilder.group({
-        integerOnly: [0],
-        oneDigitOneDecimalOnly: [0.0],
-        twoDigitsTwoDecimalsOnly: [10.00, Validators.min(10)],
+      // angular validators
+      angularGroup: this.formBuilder.group({
+        requiredInput: ['', Validators.required],
+        wtcSerialnumber: ['', Validators.pattern(/[A-Z]{4}:[0-9]{7}-[a-z][0-9][a-z][0-9]/)], // example format NRKE:46351703-s1g2
+        numberInput: ['', [Validators.maxLength(4), Validators.pattern(/[0-9][.,][0-9]{2}/)]],
+        mailOnly: ['', [Validators.minLength(4), Validators.email]]
       }),
 
+      // cross field validation
+      matchFieldOne: [],
+      matchFieldTwo: [],
+
+      // form arrays
       dynamicFields: this.formBuilder.array([
       ]),
       dynamicGroup: this.formBuilder.array([
       ]),
 
-      // !! asynchronous validation only happens after the synchronous validation is successful
-      asyncInput:
+      // custom validation
+      customValidatorInput: ['', customValidator()],
+      asyncValidationInput:
         new FormControl(
           null,
           {
             validators: Validators.minLength(3), // no pokemon name is so short, so don't unnecessary async call
-            asyncValidators: this.testAsyncValidator.validate.bind(this.testAsyncValidator),
+            asyncValidators: this.starterPokemonValidator.validate.bind(this.starterPokemonValidator), // !! asynchronous validation only happens after the synchronous validation is successful
             updateOn: "blur" // only trigger async validator again, if user clicks outside the input field
           })
 

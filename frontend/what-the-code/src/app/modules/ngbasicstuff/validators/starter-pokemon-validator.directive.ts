@@ -5,7 +5,7 @@ import {PokemonDataService} from "../../../wtc-mock-data/pokemon/pokemon-data.se
 import {catchError, map} from "rxjs/operators";
 
 @Injectable({ providedIn: 'root' })
-export class TestAsyncValidator implements AsyncValidator {
+export class StarterPokemonValidatorDirective implements AsyncValidator {
 
   constructor(private pokemonData: PokemonDataService) {
 
