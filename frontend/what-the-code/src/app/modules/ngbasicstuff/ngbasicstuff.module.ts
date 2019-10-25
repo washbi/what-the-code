@@ -7,6 +7,7 @@ import { PokemonDetailsComponent } from './components/activated-route-demo/pokem
 import { HogwartsDetailsComponent } from './components/activated-route-demo/hogwarts-details/hogwarts-details.component';
 import {SharedModule} from "../../shared-modules/shared.module";
 import { ReactiveFormsDemoComponent } from './components/reactive-forms-demo/reactive-forms-demo.component';
+import { TemplateDrivenFormsDemoComponent } from './components/template-driven-forms-demo/template-driven-forms-demo.component';
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
@@ -17,6 +18,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     PokemonDetailsComponent,
     HogwartsDetailsComponent,
     ReactiveFormsDemoComponent,
+    TemplateDrivenFormsDemoComponent,
   ],
   imports: [
     SharedModule,

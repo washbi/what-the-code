@@ -38,6 +38,8 @@ export class TechnologiesDataService {
     { id: 17, position: 2, type: this.tecTypes[5], name: 'NetBeans', description: ''},
     { id: 18, position: 3, type: this.tecTypes[5], name: 'Eclipse', description: ''},
     { id: 19, position: 1, type: this.tecTypes[3], name: 'Spring Security', description: ''},
+    { id: 20, position: 4, type: this.tecTypes[0], name: 'Sourcemaps', description: 'Sourcemaps helps you to debug typescript in Chrome. It maps the original typescript files to the main.bundle.js'},
+    { id: 21, position: 5, type: this.tecTypes[0], name: 'Augury', description: 'Chrome Extension Tool to analyze Angular components and its data values'},
   ];
 
   public getTecTypes(): TecType[] {
