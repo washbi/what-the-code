@@ -7,6 +7,7 @@ import {PokemonDetailsComponent} from "./components/activated-route-demo/pokemon
 import {HogwartsDetailsComponent} from "./components/activated-route-demo/hogwarts-details/hogwarts-details.component";
 import {ReactiveFormsDemoComponent} from "./components/reactive-forms-demo/reactive-forms-demo.component";
 import {TemplateDrivenFormsDemoComponent} from "./components/template-driven-forms-demo/template-driven-forms-demo.component";
+import {AnimationsDemoComponent} from "./components/animations-demo/animations-demo.component";
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
         ]
       },
       { path: 'reactive-forms-demo', component: ReactiveFormsDemoComponent },
-      { path: 'template-driven-forms-demo', component: TemplateDrivenFormsDemoComponent }
+      { path: 'template-driven-forms-demo', component: TemplateDrivenFormsDemoComponent },
+      { path: 'animations-demo', component: AnimationsDemoComponent }
     ]
   }
 ];

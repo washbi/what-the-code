@@ -1,0 +1,28 @@
+<div>
+  <h1>animations-demo</h1>
+
+  <div>
+    <input
+      type="text"
+      placeholder="enter cursor to see animation"
+      [@animateInputField]="mouseEntered ? 'inputState2' : 'inputState1'"
+      (focusin)="onInputFocus()"
+      (focusout)="onInputFocus()">
+  </div>
+
+  <div>
+    <button
+      [@animateButton]="clicked ? 'buttonState2' : 'buttonState1'"
+      (click)="onButtonClick()">
+      Click me to see animation
+    </button>
+  </div>
+
+  <div @flyInAndOut *ngIf="clicked" class="insert-remove-container">
+    <p>The box is inserted</p>
+  </div>
+
+  <div *ngFor="let item of demoItems" class="demoItem">
+      {{ item.houseName }}
+  </div>
+</div>
