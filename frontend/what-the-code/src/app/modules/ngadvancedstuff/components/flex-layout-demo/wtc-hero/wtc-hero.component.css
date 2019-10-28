@@ -1,0 +1,9 @@
+.movable-item {
+  z-index: 100;
+  max-width: 9%;
+}
+
+.movable-item img {
+  width: 100%;
+  cursor: move;
+}

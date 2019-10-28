@@ -19,8 +19,4 @@ export class ModulePlanetDataService {
     return this.planets;
   }
 
-  public updatePosition(planet: ModulePlanet, posX: number, posY: number) {
-
-  }
-
 }

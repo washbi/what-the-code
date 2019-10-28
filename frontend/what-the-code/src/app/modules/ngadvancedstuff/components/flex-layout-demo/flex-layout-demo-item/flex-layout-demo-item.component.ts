@@ -1,9 +1,7 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
-import {faArrowsAlt} from "@fortawesome/free-solid-svg-icons";
 import {ModulePlanet} from "../../../../../wtc-mock-data/module-planets/module-planet";
-import {CdkDragRelease} from "@angular/cdk/drag-drop";
-import {ModulePlanetDataService} from "../../../../../wtc-mock-data/module-planets/module-planet-data.service";
 import {Router} from "@angular/router";
+import {CanvasPositionsService} from "../service/canvas-positions.service";
 
 @Component({
   selector: 'app-flex-layout-demo-item',
@@ -14,21 +12,12 @@ export class FlexLayoutDemoItemComponent implements OnInit {
 
   @Input() item: ModulePlanet;
 
-  faArrowsAlt = faArrowsAlt;
-
-  // responsive canvas -> adjust positions of the items, if window resized
-  currWindowHeight;
-  currWindowWidth;
-  unit = 'px';
-
   itemTop: string;
   itemLeft: string;
 
-  constructor(private router: Router, private modulePlanetData: ModulePlanetDataService) { }
+  constructor(private canvasService: CanvasPositionsService, private router: Router) { }
 
   ngOnInit() {
-    this.currWindowHeight = window.innerHeight;
-    this.currWindowWidth = window.innerWidth;
     this.setBoxPositions();
   }
 
@@ -38,37 +27,14 @@ export class FlexLayoutDemoItemComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.currWindowHeight = window.innerHeight;
-    this.currWindowWidth = window.innerWidth;
+    this.canvasService.setWindowSize();
     this.setBoxPositions();
   }
 
   private setBoxPositions() {
-    this.itemTop = this.getPosition(this.item.posY, this.currWindowHeight);
-    this.itemLeft = this.getPosition(this.item.posX, this.currWindowWidth);
+    this.itemTop = this.canvasService.getYPosition(this.item.posY);
+    this.itemLeft = this.canvasService.getXPosition(this.item.posX);
   }
 
-  public getPosition(x: number, winSize: number): string {
-    if (x < 0) {
-      return 0 + this.unit;
-    }
 
-    const xPercentage = x / 100;
-    const xResult = xPercentage * winSize;
-
-    return xResult + this.unit;
-  }
-
-  public handleDragReleaseEvent(released: CdkDragRelease) {
-    const canvas = document.getElementById('drag-n-drop-boundary-container');
-    const rect = released.source.element.nativeElement.getBoundingClientRect();
-    // really dirty fix because absolute position is from canvas. But rect.top is from window root
-    const topRelativeToParent = rect.top - canvas.offsetTop;
-    const posYPercentage = Math.round(
-      (topRelativeToParent / this.currWindowHeight) * 100
-    );
-    const posXPercentage = Math.round((rect.left / this.currWindowWidth) * 100);
-
-    this.modulePlanetData.updatePosition(this.item, posXPercentage, posYPercentage);
-  }
 }

@@ -1,4 +1,4 @@
-#drag-n-drop-boundary-container {
+.canvas-container {
   border: #24292e 2px solid;
   background-color: #888888;
   height: 800px;

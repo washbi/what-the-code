@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ModulePlanetDataService} from "../../../../wtc-mock-data/module-planets/module-planet-data.service";
 import {ModulePlanet} from "../../../../wtc-mock-data/module-planets/module-planet";
+import {CanvasPositionsService} from "./service/canvas-positions.service";
 
 @Component({
   selector: 'app-flex-layout-demo',
@@ -11,7 +12,8 @@ export class FlexLayoutDemoComponent implements OnInit {
 
   planets: ModulePlanet[] = [];
 
-  constructor(private modulePlanetsData: ModulePlanetDataService) { }
+  constructor(public canvasService: CanvasPositionsService, private modulePlanetsData: ModulePlanetDataService) {
+  }
 
   ngOnInit() {
     this.planets = this.modulePlanetsData.getPlanets();

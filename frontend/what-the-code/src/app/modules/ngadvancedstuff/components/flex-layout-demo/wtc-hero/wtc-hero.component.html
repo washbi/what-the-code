@@ -1,0 +1,11 @@
+<!-- no canvas and position on mobile-->
+<div cdkDrag
+     cdkDragBoundary="#{{canvasService.canvasId}}"
+     (cdkDragReleased)="handleDragReleaseEvent($event)"
+     fxShow.xs="false"
+     [ngStyle]="{ position: 'absolute', top: itemTop, left: itemLeft}"
+     [ngStyle.xs]="{}"
+     class="movable-item"
+>
+  <img src="../assets/pngs/superman.png" alt="hero"/>
+</div>
