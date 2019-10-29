@@ -1,0 +1,43 @@
+.movable-item {
+  z-index: 100;
+  height: 12%;
+}
+
+.movable-item img {
+  height: 100%;
+  cursor: move;
+}
+
+
+.speech-bubble {
+  --speech-bubble-color: yellow;
+}
+
+.speech-bubble {
+  width: 20em;
+  margin-left: 1.7em;
+  border: 0.2em solid var(--speech-bubble-color);
+  padding: 1em;
+  text-align: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* drawing that arrow of the speech bubble */
+.speech-bubble:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 1em solid transparent;
+  border-right: 1.7em solid var(--speech-bubble-color);
+  right: 60%;
+  left: -1.7em;
+}
+
+.speech-bubble button {
+  background-color: yellow;
+  border: none;
+  padding: 0em 1.5em 0em 1.5em;
+  font-weight: bold;
+}

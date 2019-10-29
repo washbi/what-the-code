@@ -9,6 +9,7 @@ import {SharedModule} from "../../shared-modules/shared.module";
 import { ReactiveFormsDemoComponent } from './components/reactive-forms-demo/reactive-forms-demo.component';
 import { TemplateDrivenFormsDemoComponent } from './components/template-driven-forms-demo/template-driven-forms-demo.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { AnimationsDemoComponent } from './components/animations-demo/animations-demo.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     HogwartsDetailsComponent,
     ReactiveFormsDemoComponent,
     TemplateDrivenFormsDemoComponent,
+    AnimationsDemoComponent,
   ],
   imports: [
     SharedModule,

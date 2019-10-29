@@ -1,23 +1,25 @@
 <!-- no canvas and position on mobile-->
-<div cdkDrag
-     cdkDragBoundary="#drag-n-drop-boundary-container"
-     (cdkDragReleased)="handleDragReleaseEvent($event)"
-     fxFlex="10%"
+<div fxFlex="10%"
      fxFlex.xs="100%"
      [ngStyle]="{ position: 'absolute', top: itemTop, left: itemLeft}"
      [ngStyle.xs]="{}"
-     class="movable-item"
+     id="{{item.id}}"
 >
+  <!-- mobile with click -->
+  <img src="../assets/icons/{{item.icon}}"
+       alt="{{item.name}} icon"
+       (click)="onClickIcon()"
+       fxShow="false"
+       fxShow.xs="true"
+  />
+  <!-- desktop without click -->
+  <img src="../assets/icons/{{item.icon}}"
+       alt="{{item.name}} icon"
+       [ngClass]="{'blinking-state': itemFocussed}"
+       fxShow="true"
+       fxShow.xs="false"
+  />
   <div>
-    <span>{{item.name}}</span>
-    <!-- dont show drag and drop icon on mobile-->
-    <div fxShow="true"
-         fxShow.xs="false"
-         class="movable-item-handle"
-         cdkDragHandle>
-      <fa-icon [icon]="faArrowsAlt" [size]="'3x'"></fa-icon>
-    </div>
+    <span [ngClass]="{'glow-text': itemFocussed}">{{item.name}}</span>
   </div>
-
-  <img src="../assets/icons/{{item.icon}}" alt="{{item.name}} icon" (click)="onClickIcon()"/>
 </div>

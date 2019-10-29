@@ -1,7 +1,17 @@
-.movable-item img {
+img {
   width: 100%;
 }
 
-.movable-item-handle {
-  cursor: move;
+.glow-text {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 15px yellow;
+}
+
+.blinking-state {
+  animation: blinking-animation 1s infinite;
+}
+
+@keyframes blinking-animation {
+  50% {
+    opacity: 0;
+  }
 }

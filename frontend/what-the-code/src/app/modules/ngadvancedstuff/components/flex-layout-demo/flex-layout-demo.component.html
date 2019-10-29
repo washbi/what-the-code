@@ -1,6 +1,12 @@
 <h1>@angular/flex-layout Demo</h1>
 
-<div id="drag-n-drop-boundary-container">
+<div id="{{canvasService.canvasId}}"
+     class="canvas-container"
+     [ngStyle]="{ height: '800px'}"
+     [ngStyle.xs]="{ }"
+>
+  <app-wtc-hero></app-wtc-hero>
+
   <ng-container *ngFor="let planet of planets">
     <app-flex-layout-demo-item [item]="planet"></app-flex-layout-demo-item>
   </ng-container>

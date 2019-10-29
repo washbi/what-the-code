@@ -1,0 +1,21 @@
+<!-- no canvas and position on mobile-->
+<div cdkDrag
+     cdkDragBoundary="#{{canvasService.canvasId}}"
+     (cdkDragReleased)="handleDragReleaseEvent($event)"
+     [ngStyle]="{ position: 'absolute', top: itemTop, left: itemLeft}"
+     [ngStyle.xs]="{}"
+     class="d-inline-flex movable-item"
+     [@heroFlyInAnimation]="true"
+>
+  <img src="../assets/pngs/superman.png"
+       alt="hero"
+       id="{{heroImageId}}"
+       fxShow.xs="false"
+       [@heroEnterPlanetAnimation]="heroEnterPlanetAnimation"/>
+  <div *ngIf="isHeroFocusState()" class="speech-bubble">
+    <p>Enter {{this.targetPlanet.name}}?</p>
+    <button (click)="onYes()">
+      Yes
+    </button>
+  </div>
+</div>
