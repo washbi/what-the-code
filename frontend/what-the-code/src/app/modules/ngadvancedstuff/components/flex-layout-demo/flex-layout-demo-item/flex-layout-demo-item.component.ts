@@ -2,6 +2,9 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {ModulePlanet} from "../../../../../wtc-mock-data/module-planets/module-planet";
 import {Router} from "@angular/router";
 import {CanvasPositionsService} from "../service/canvas-positions.service";
+import {WtcHeroService} from "../wtc-hero/wtc-hero.service";
+import {WtcHeroAction} from "../wtc-hero/wtc-hero-action";
+import {WtcHeroState} from "../wtc-hero/wtc-hero-state";
 
 @Component({
   selector: 'app-flex-layout-demo-item',
@@ -15,7 +18,25 @@ export class FlexLayoutDemoItemComponent implements OnInit {
   itemTop: string;
   itemLeft: string;
 
-  constructor(private canvasService: CanvasPositionsService, private router: Router) { }
+  itemFocussed: boolean;
+
+  constructor(private canvasService: CanvasPositionsService,
+              private wtcHeroService: WtcHeroService,
+              private router: Router) {
+
+    this.wtcHeroService.heroAction$.subscribe((heroAction: WtcHeroAction) => {
+
+      if (heroAction &&
+        heroAction.state === WtcHeroState.FOCUS &&
+        heroAction.collidedPlanets.includes(this.item)) {
+        this.itemFocussed = true;
+      } else {
+        this.itemFocussed = false;
+      }
+
+    });
+
+  }
 
   ngOnInit() {
     this.setBoxPositions();

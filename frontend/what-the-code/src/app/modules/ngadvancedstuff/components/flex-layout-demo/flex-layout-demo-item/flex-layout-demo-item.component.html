@@ -5,8 +5,21 @@
      [ngStyle.xs]="{}"
      id="{{item.id}}"
 >
-  <img src="../assets/icons/{{item.icon}}" alt="{{item.name}} icon" (click)="onClickIcon()"/>
+  <!-- mobile with click -->
+  <img src="../assets/icons/{{item.icon}}"
+       alt="{{item.name}} icon"
+       (click)="onClickIcon()"
+       fxShow="false"
+       fxShow.xs="true"
+  />
+  <!-- desktop without click -->
+  <img src="../assets/icons/{{item.icon}}"
+       alt="{{item.name}} icon"
+       [ngClass]="{'blinking-state': itemFocussed}"
+       fxShow="true"
+       fxShow.xs="false"
+  />
   <div>
-    <span>{{item.name}}</span>
+    <span [ngClass]="{'glow-text': itemFocussed}">{{item.name}}</span>
   </div>
 </div>

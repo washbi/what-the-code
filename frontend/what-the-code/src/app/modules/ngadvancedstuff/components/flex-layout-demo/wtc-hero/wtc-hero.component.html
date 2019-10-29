@@ -2,10 +2,15 @@
 <div cdkDrag
      cdkDragBoundary="#{{canvasService.canvasId}}"
      (cdkDragReleased)="handleDragReleaseEvent($event)"
-     fxShow.xs="false"
      [ngStyle]="{ position: 'absolute', top: itemTop, left: itemLeft}"
      [ngStyle.xs]="{}"
-     class="movable-item"
+     class="d-inline-flex movable-item"
 >
-  <img src="../assets/pngs/superman.png" alt="hero"/>
+  <img src="../assets/pngs/superman.png" alt="hero" id="{{heroImageId}}" fxShow.xs="false"/>
+  <div *ngIf="isHeroFocusState()" class="speech-bubble">
+    <p>Enter {{this.targetPlanet.name}}?</p>
+    <button (click)="onYes()">
+      Yes
+    </button>
+  </div>
 </div>
