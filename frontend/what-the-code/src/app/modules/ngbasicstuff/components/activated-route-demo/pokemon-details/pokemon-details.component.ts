@@ -16,9 +16,9 @@ export class PokemonDetailsComponent implements OnInit {
               private pokemonData: PokemonDataService) { }
 
   ngOnInit() {
-    const pokemonId = this.activatedRoute.snapshot.params['pokemonId']; // 'pokemonId' from routing.module.ts
+    const pokemonId:number = this.activatedRoute.snapshot.params['pokemonId']; // 'pokemonId' from routing.module.ts
 
-    this.loadPokemon(pokemonId);
+    this.loadPokemon(Number(pokemonId)); // attention! param comes as a string. The :number declaration doesn't throw an error!
   }
 
   private loadPokemon(id: number) {
