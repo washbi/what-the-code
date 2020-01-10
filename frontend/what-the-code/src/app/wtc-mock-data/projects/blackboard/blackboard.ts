@@ -22,6 +22,7 @@ export class Blackboard {
   ];
 
   featuresBackend = [
+      { description: 'SSO', realization: 'keycloak' },
       { description: 'getting around CORS', realization: '@CrossOrigin(origins = {"http://localhost:4200"})' },
       { description: 'CRUD images and PDF files via REST', realization: 'Base64 converting and map from POJOs to TOs.' },
       { description: 'Searching with DYNAMIC parameters (keyword, type, category, pagination, sorting, order, byUser, byId, isActive)', realization: 'JPA Criteria API' },
@@ -44,7 +45,7 @@ export class Blackboard {
     { description: 'filterbar with keyword, categories, radio button, drodown menue', realization: 'look at the wonderful code' },
     { description: 'paging control bar', realization: 'look at the wonderful code' },
     { description: 'errorhandling', realization: 'httpClient.get(...).pipe(catchError(doSth))  or service.getStuff(...).subscribe(success => {...}, error => {...})' },
-    { description: '', realization: '' },
+    { description: 'accessibility', realization: 'you can use the app with keyboard and screenreader' },
 
   ];
 
